@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { FormValidationService } from 'src/app/services/validation/form-validation.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,34 +12,40 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class SignUpComponent implements OnInit {
 
-  signUpForm: FormGroup;
+  public signUpForm: FormGroup;
 
-  constructor( private authService: AuthService) { }
+  constructor( private authService: AuthService, private formValidationService: FormValidationService, private router: Router) { }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
-      username: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required)
+      firstname: new FormControl(null, Validators.required),
+      lastname: new FormControl(null, Validators.required),
+      email: new FormControl(null, [Validators.email, Validators.required]),
+      username: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)])
+
     })
   }
 
   signUp() {
-    this.signUpForm.get('username').markAsTouched();
-    this.signUpForm.get('password').markAsTouched();
+    this.signUpForm.markAllAsTouched();
     if (this.signUpForm.valid) {
       this.authService.signUp(this.signUpForm.value).subscribe(
         (data) => {
           console.log(data);
+          this.router.navigate(['/home']);
         },
         (err) => {
           console.log(err);
         }
       );
+    } else {
+      console.log('Form not valid');
     }
   }
 
   isNotValid(controlName) {
-    return (this.signUpForm.get(controlName).touched && !this.signUpForm.get(controlName).valid);
+    return this.formValidationService.isNotValid(controlName, this.signUpForm);
   }
 
 }

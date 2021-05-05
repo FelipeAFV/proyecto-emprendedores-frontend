@@ -1,3 +1,14 @@
 .my-container {
     min-width: 400px;
 }
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin: 10px 0;
+    
+}
+
+#go-login {
+    text-align: center;
+}
