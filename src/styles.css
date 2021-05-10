@@ -1,7 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
-
+:root {
+    --first-color: #fffcf2;
+    --second-color: #ccc5b9;
+    --third-color: #403d39;
+    --fourth-color: #252422;
+    --fifth-color: #eb5e28;
+}
 
 .h1-underline {
     padding: 10px 0;
     border-bottom: solid #f3f3f3 2px;
 }
+
+.my-button {
+    padding: 0.4em;
+    margin: 0.3em 0.5em;
+    border-radius: 0.3em;
+    border: solid var(--second-color) 1px;
+    color: var(--third-color);
+    background-color: var(--second-color);
+    box-shadow: 7px 7px 5px #4d4e4c94;
+}
+
+.my-button:hover {
+    color: #ffffffff;
+}
+
+.link {
+    color: var(--fourth-color);
+}
+

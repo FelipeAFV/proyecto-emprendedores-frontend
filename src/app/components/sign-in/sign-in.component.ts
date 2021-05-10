@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { LocalStorageService } from 'src/app/services/localstorage/local-storage.service';
 import { FormValidationService } from 'src/app/services/validation/form-validation.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class SignInComponent implements OnInit {
 
   signInForm: FormGroup;
 
-  constructor(private authService: AuthService ,private formValidationService: FormValidationService, private router: Router) { }
+  constructor(private authService: AuthService ,private formValidationService: FormValidationService, private router: Router,
+    private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
     this.signInForm = new FormGroup({
@@ -26,8 +28,9 @@ export class SignInComponent implements OnInit {
     this.signInForm.markAllAsTouched();
     if (this.signInForm.invalid) return;
     this.authService.signIn(this.signInForm.value).subscribe(
-      (data) => {
+      (data:any) => {
         console.log(data);
+        this.localStorageService.setProfile(data.profile);
         this.router.navigate(['/home']);
       },
       (err) => {

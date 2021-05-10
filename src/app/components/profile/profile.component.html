@@ -1,0 +1,21 @@
+<div class="main-container">
+    <div class="my-container">
+
+        <div class="my-subcontainer">
+        <h2>Mi perfil</h2>
+        <p>Nombre: {{personName}}</p>
+        <p>Email: {{email}}</p>
+    </div>
+    <div class="my-subcontainer">
+        <h3>Emprendimientos favoritos</h3>
+        <div *ngIf="favoriteStores" >
+            <p *ngFor="let store of favoriteStores">
+                {{store.name}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<button class="my-float-button my-button">Modo {{modeToChange}}</button>
+
+</div>

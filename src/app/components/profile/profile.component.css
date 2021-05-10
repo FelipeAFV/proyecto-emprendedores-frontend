@@ -1,0 +1,33 @@
+/* .main-container {
+    position: relative;
+} */
+
+.my-container {
+    display: flex;
+
+    
+}
+
+.my-subcontainer {
+    margin: 2em;
+    padding: 1em;
+}
+
+.my-container .my-subcontainer:nth-of-type(1) {
+    flex-grow: 1;
+    word-wrap: break-word;
+}
+
+
+.my-container .my-subcontainer:nth-of-type(2) {
+    flex-grow: 3;
+    word-wrap: break-word;
+}
+
+.my-float-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+
+}
+
