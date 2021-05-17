@@ -1,0 +1,22 @@
+<div class="main-container">
+    <div class="my-container">
+
+        <div class="my-subcontainer">
+            <h2>Mi perfil</h2>
+            <p>Nombre: {{personName}}</p>
+            <p>Email: {{email}}</p>
+        </div>
+        <div class="my-subcontainer">
+            <div *ngIf="modeToChange=='emprendedor' ; else otherMode ">
+
+                <app-client-profile></app-client-profile> 
+            </div>
+            <ng-template #otherMode>
+                <app-store-manager-profile></app-store-manager-profile>
+            </ng-template>
+        </div>
+    </div>  
+
+<button class="my-float-button my-button">Modo {{modeToChange}}</button>
+
+</div>

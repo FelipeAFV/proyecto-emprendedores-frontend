@@ -1,9 +1,8 @@
-import { Component, ComponentFactoryResolver, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AppRole } from 'src/app/model/app-role';
-import { Store } from 'src/app/model/store';
-import { LocalStorageService } from 'src/app/services/localstorage/local-storage.service';
+import { AppRole } from '../model/app-role';
+import { LocalStorageService } from '../services/localstorage/local-storage.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,8 +10,6 @@ import { LocalStorageService } from 'src/app/services/localstorage/local-storage
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  favoriteStores: Store[] = [{name: 'El emprendimiento1'},{name: 'El emprendimiento2'}];
 
   @Input()
   personName: string;
