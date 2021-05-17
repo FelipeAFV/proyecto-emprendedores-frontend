@@ -13,5 +13,5 @@ import { StoresRoutingModule } from './stores-routing.module';
     CommonModule,
     StoresRoutingModule
   ]
-})
+}) 
 export class StoresModule { }

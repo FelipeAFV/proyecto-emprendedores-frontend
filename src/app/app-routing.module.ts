@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
   { path: 'stores', loadChildren: () => import('./stores/stores.module').then(m => m.StoresModule) },
 ];
-
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
