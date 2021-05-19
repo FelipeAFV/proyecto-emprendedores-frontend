@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreComponent } from './store/store.component';
-import { StoresRoutingModule } from './stores-routing.module';
+import { StoresRoutingModule } from './stores-routing.module'; 
+import { StoreService } from './services/store/store.service';
 
 
 
@@ -12,6 +13,9 @@ import { StoresRoutingModule } from './stores-routing.module';
   imports: [
     CommonModule,
     StoresRoutingModule
+  ],
+  providers: [
+    StoreService
   ]
 }) 
 export class StoresModule { }
