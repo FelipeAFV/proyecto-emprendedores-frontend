@@ -17,13 +17,15 @@ export class ClientProfileComponent implements OnInit {
   ngOnInit(): void {
     this.clientProfileService.getFavoriteStores().subscribe(
       (data: Store[]) => {
+        console.log(data);
         this.favoriteStores = data;
       }
     );
   }
 
-  goToStore(storeName: string) {
-    this.router.navigate([`stores/${storeName}`]);
+  goToStore(store: Store) {
+    console.log(store);
+    this.router.navigate([`stores/${store.name}`], {state: store});
   }
 
 }

@@ -22,4 +22,16 @@ export class AuthService {
       withCredentials: true
     })
   }
+
+  isLogged() {
+    return this.http.get(`${environment.AuthUrl}/isLogged`, {
+      withCredentials: true
+    }) 
+  }
+
+  logout() {
+    return this.http.get(`${environment.AuthUrl}/logout`, {
+      withCredentials: true
+    }) 
+  }
 }

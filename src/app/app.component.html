@@ -1,7 +1,7 @@
 <nav class="main-container navbar navbar-expand-lg navbar-dark">
 
     <div class="container-fluid mx-3">
-      <a class="navbar-brand" href="/home">Emprendedores</a>
+      <a class="navbar-brand " href="/home">Emprendedores</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,8 +12,9 @@
             <a class="nav-link active" aria-current="page" href="/profile">Mi perfil</a>
           </div>
           <div class="navbar-nav">
-            <a class="nav-link" href="/signIn">Iniciar Sesión</a>
+            <a id="inicio-sesion" class="nav-link" href="/signIn">Iniciar Sesión</a>
             <a class="nav-link" href="/signUp">Registrarse</a>
+            <a class="nav-link" id="logout" (click)="logout()">Cerrar sesión</a>
           </div>
         </div>
         

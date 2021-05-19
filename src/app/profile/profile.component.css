@@ -25,8 +25,19 @@
     word-wrap: break-word;
 }
 
+.profile-data {
+    margin: 1em;
+}
+
 .my-float-button {
+    border: solid black 1px;
+    font-size: 14px;
+    padding: 0.7em;
+    border-radius: 2em;
+    font-weight: 400;
+    box-shadow: none;
     position: fixed;
+    /* font-weight: 500; */
     bottom: 2rem;
     right: 1rem;
 

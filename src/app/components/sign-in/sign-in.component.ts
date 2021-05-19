@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { LocalStorageService } from 'src/app/services/localstorage/local-storage.service';
-import { FormValidationService } from 'src/app/services/validation/form-validation.service';
+import { AuthService } from './../../services/auth/auth.service';
+import { LocalStorageService } from './../../services/localstorage/local-storage.service';
+import { FormValidationService } from './../../services/validation/form-validation.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -30,7 +30,7 @@ export class SignInComponent implements OnInit {
     this.authService.signIn(this.signInForm.value).subscribe(
       (data:any) => {
         console.log(data);
-        this.localStorageService.setProfile(data.profile);
+        this.localStorageService.setProfile(data);
         this.router.navigate(['/home']);
       },
       (err) => {

@@ -1,8 +1,8 @@
 <h2>Emprendimientos favoritos</h2>
 
 <div class="container">
-        <div (click)="goToStore(store.name)" class="store-container" *ngFor="let store of favoriteStores">
+        <div (click)="goToStore(store)" class="store-container" *ngFor="let store of favoriteStores">
                 <h4>{{store.name}}</h4>
-                <p>hsakdhkjhas</p>
+                <p>{{store.description}}</p>
         </div>
 </div>

@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { LocalStorageService } from 'src/app/services/localstorage/local-storage.service';
-import { FormValidationService } from 'src/app/services/validation/form-validation.service';
+import { AuthService } from './../../services/auth/auth.service';
+import { LocalStorageService } from './../../services/localstorage/local-storage.service';
+import { FormValidationService } from './../../services/validation/form-validation.service';
 
 @Component({
   selector: 'app-sign-up',

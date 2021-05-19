@@ -2,9 +2,27 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    font-size: 0.9rem;
 }
 
 .main-container {
+    /* padding: 0; */
     background-color: var(--third-color);
 }
 
+#logout {
+    cursor: pointer;
+    background-color: var(--fifth-color);
+    padding: 8px;
+}
+
+#inicio-sesion {
+    /* padding: 16px 8px;
+    
+    background-color: var(--second-color); */
+    display: flex;
+    align-items: center;
+}
+
+#auth-container {
+}

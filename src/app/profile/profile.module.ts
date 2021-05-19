@@ -7,6 +7,7 @@ import { ClientProfileComponent } from './components/client-profile/client-profi
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 import { StoreManagerProfileComponent } from './components/store-manager-profile/store-manager-profile.component';
 import { ClientProfileService } from './services/client-profile/client-profile.service';
+import { StoreService } from '../stores/services/store/store.service';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ClientProfileService } from './services/client-profile/client-profile.s
     ProfileRoutingModule
   ],
   providers: [
-    ClientProfileService
+    ClientProfileService,
+    StoreService
   ]
 })
 export class ProfileModule { }

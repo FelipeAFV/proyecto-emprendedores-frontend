@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+}
+
+.subcontainer {
+    margin: 1em;
+    padding: 0.5em;
+}
+
+#store-name {
+    font-style: italic;
+}
