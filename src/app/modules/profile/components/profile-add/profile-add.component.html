@@ -1,0 +1,30 @@
+<div class="my-container w-25 container my-5">
+    <h1>Creación de perfil {{profileToCreate}}</h1>
+    <form [formGroup]="addProfileForm" (ngSubmit)="createProfile()">
+        <div class="my-3">
+          <label for="firstName" class="form-label">Nombre</label>
+          <input formControlName="firstName" type="text" class="form-control" id="firstName" >
+        </div>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Apellido</label>
+          <input formControlName="lastName" type="text" class="form-control" id="lastName">
+        </div>
+        <div class="mb-3">
+          <label for="role" class="form-label">Rol</label>
+          <select class="form-control" id="role" formControlName="role">
+            
+            <option selected="selected" value="{{availableProfiles['storeManager']}}">Emprendedor</option>
+              <option *ngIf="!isStoreManagerRequest" value="{{availableProfiles['client']}}">Cliente</option>
+              <option *ngIf="!isStoreManagerRequest" value="{{availableProfiles['admin']}}">Admin</option>
+              
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input formControlName="email" type="text" class="form-control" id="email">
+        </div>
+        
+        <button type="submit" class="my-button">Crear perfil</button>
+      </form>
+    
+</div>

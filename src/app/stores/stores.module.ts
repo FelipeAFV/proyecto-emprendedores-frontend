@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { StoreComponent } from './store/store.component';
 import { StoresRoutingModule } from './stores-routing.module'; 
 import { StoreService } from './services/store/store.service';
+import { CheckRoleDirective } from '../directives/check-role/check-role.directive';
+import { DirectivesModule } from '../modules/directives/directives.module';
 
 
 
@@ -12,7 +14,8 @@ import { StoreService } from './services/store/store.service';
   ],
   imports: [
     CommonModule,
-    StoresRoutingModule
+    StoresRoutingModule,
+    DirectivesModule
   ],
   providers: [
     StoreService

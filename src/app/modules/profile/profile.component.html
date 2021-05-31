@@ -10,16 +10,10 @@
             </div>
         </div>
         <div class="my-subcontainer">
-            <div *ngIf="modeToChange=='emprendedor' ; else otherMode ">
-
-                <app-client-profile></app-client-profile> 
-            </div>
-            <ng-template #otherMode>
-                <app-store-manager-profile></app-store-manager-profile>
-            </ng-template>
+            <router-outlet></router-outlet>
         </div>
     </div>  
 
-<button class="my-float-button my-button">Modo {{modeToChange}}</button>
+<button class="my-float-button my-button" (click)="hasProfile(roleToChange)">Modo {{modeToChange}}</button>
 
 </div>

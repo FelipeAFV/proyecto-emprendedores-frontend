@@ -2,6 +2,9 @@
     <div class="subcontainer">
 
         <h1>Bienvenidos a la tienda <span id="store-name">{{store.name}}</span></h1>
-        
+        <div *appCheckRole="'STORE_MANAGER'" >
+
+            <button class="my-float-button my-button">Administrar</button>
+        </div>
     </div>
 </div>

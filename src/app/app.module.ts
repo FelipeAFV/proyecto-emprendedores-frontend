@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomeComponent } from './components/home/home.component';
+import { CheckRoleDirective } from './directives/check-role/check-role.directive';
+import { DirectivesModule } from './modules/directives/directives.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    DirectivesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
