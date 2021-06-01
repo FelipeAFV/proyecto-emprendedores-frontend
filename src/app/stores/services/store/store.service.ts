@@ -13,4 +13,9 @@ export class StoreService {
     return this.http.get<Store>(`${environment.ApiUrl}/stores/${storeName}`, {withCredentials: true});
     // return of({name: storeName});
   }
+  
+  isStoreManager(storeName: string) {
+    return this.http.post(`${environment.ApiUrl}/authorization/isStoreOwner`, {storeName: storeName}, {withCredentials: true});
+
+  }
 }

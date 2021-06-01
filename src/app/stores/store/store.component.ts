@@ -14,6 +14,8 @@ export class StoreComponent implements OnInit {
 
   store: Store;
 
+  isStoreManagerViewing: boolean;
+
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private location: Location, private storeService: StoreService) {
     // this.store = <Store> this.location.getState();
   }
@@ -22,9 +24,18 @@ export class StoreComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Store', this.store);
+
     
     this.activatedRoute.params.subscribe( (params: Params) => {
       console.log('Param id', params.id);
+      this.storeService.isStoreManager(params.storeName).subscribe(
+        (data) => {
+          this.isStoreManagerViewing = true;
+        },
+        (error) => {
+          this.isStoreManagerViewing = false;
+        }
+      );
       this.storeService.getStoreByName(params.storeName).subscribe(
         (data) => {
           this.store = data;

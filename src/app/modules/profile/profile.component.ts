@@ -32,11 +32,12 @@ export class ProfileComponent implements OnInit, AfterContentInit, OnChanges{
     this.platformLocation.onPopState(() => {
       if (this.router.url.includes('profile')) this.hasProfile(this.roleToChange);
       
-    
+      
     });
     
    }
   ngOnChanges(changes: SimpleChanges): void {
+    this.loadProfileData();
     // this.canRenderService.allowRender();
   }
   ngAfterContentInit(): void {
@@ -76,7 +77,7 @@ export class ProfileComponent implements OnInit, AfterContentInit, OnChanges{
 
   loadProfileData() {
     console.log('Ejecutando load profile data');
-    const profile = this.localStorageService.getCurrentProfile();
+    const profile = this.profileService.getCurrentProfile();
     this.personName = `${profile.firstName} ${profile.lastName}`;
     this.email = profile.email;
     switch (profile.role) {
