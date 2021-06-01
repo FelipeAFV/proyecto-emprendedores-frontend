@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { AppRole } from '../../model/app-role';
 import { LocalStorageService } from '../../services/localstorage/local-storage.service';
 import { ClientProfileComponent } from './components/client-profile/client-profile.component';
-import { CanRenderService } from './services/can-render/can-render.service';
+import { CanRenderService } from '../../services/can-render/can-render.service';
 import { ProfileService } from './services/profile/profile.service';
 
 @Component({
@@ -16,15 +16,14 @@ import { ProfileService } from './services/profile/profile.service';
 })
 export class ProfileComponent implements OnInit, AfterContentInit, OnChanges{
 
-  @Input()
   personName: string;
-
-  @ViewChild(ClientProfileComponent)
-  clientComponent: ViewChild;
-
   email: string;
+
   modeToChange: string;
   roleToChange: AppRole;
+  
+  private readonly STORE_MANAGER = 'emprendedor';
+  private readonly CLIENT = 'cliente';
 
   constructor(private localStorageService: LocalStorageService, private profileService: ProfileService, private router: Router, private platformLocation: PlatformLocation, private canRenderService: CanRenderService) {
     this.loadProfileData();
@@ -72,10 +71,6 @@ export class ProfileComponent implements OnInit, AfterContentInit, OnChanges{
           this.router.navigate(['profile/addStoreManager']);
         }
       );
-
-
-
-    
     
   }
 
@@ -86,13 +81,13 @@ export class ProfileComponent implements OnInit, AfterContentInit, OnChanges{
     this.email = profile.email;
     switch (profile.role) {
       case AppRole.CLIENT:
-        this.modeToChange = 'emprendedor'
+        this.modeToChange = this.STORE_MANAGER;
         this.roleToChange = AppRole.STORE_MANAGER;
         this.router.navigate(['profile/client']);
         break;
         
         case AppRole.STORE_MANAGER:
-          this.modeToChange = 'cliente'
+          this.modeToChange = this.CLIENT;
           this.roleToChange = AppRole.CLIENT;
           this.router.navigate(['profile/storeManager']);
         break;

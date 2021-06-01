@@ -15,8 +15,6 @@ export class ProfileAddComponent implements OnInit {
 
   addProfileForm: FormGroup;
 
-  profileToCreate: string;
-
   isStoreManagerRequest: boolean;
 
   availableProfiles = { admin: AppRole.ADMIN, client: AppRole.CLIENT, storeManager: AppRole.STORE_MANAGER};
@@ -25,7 +23,6 @@ export class ProfileAddComponent implements OnInit {
       private localStorageService: LocalStorageService) {
     activatedRoute.data.subscribe((data) => {
       this.isStoreManagerRequest = data.isStoreManagerRequest;
-      this.profileToCreate = data.profileToCreate;
     })
   }
 

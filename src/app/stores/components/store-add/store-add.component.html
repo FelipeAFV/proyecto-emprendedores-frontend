@@ -1,0 +1,24 @@
+<div class="my-container w-25 container my-5">
+    <h1>Creación de tienda</h1>
+    <form [formGroup]="addStoreForm" (ngSubmit)="createStore()">
+        <div class="my-3">
+          <label for="name" class="form-label">Nombre de tienda</label>
+          <input formControlName="name" type="text" class="form-control" id="name" >
+        </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">Contraseña</label>
+          <select formControlName="category" id="category" class="form-control">
+              <option value="">Tecnología</option>
+              <option value="">Salud</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Descripción</label>
+          <textarea formControlName="description" id="description" class="form-control">
+          </textarea>
+        </div>
+        
+        <button type="submit" class="my-button">Crear</button>
+      </form>
+    
+</div>

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { Store } from 'src/app/model/store';
 import { LocalStorageService } from 'src/app/services/localstorage/local-storage.service';
-import { CanRenderService } from '../../services/can-render/can-render.service';
+import { CanRenderService } from '../../../../services/can-render/can-render.service';
 import { ClientProfileService } from '../../services/client-profile/client-profile.service';
 
 @Component({

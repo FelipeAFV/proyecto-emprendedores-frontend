@@ -11,6 +11,8 @@ import { StoreService } from '../../stores/services/store/store.service';
 import { ProfileService } from './services/profile/profile.service';
 import { ProfileAddComponent } from './components/profile-add/profile-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreManagerProfileService } from './services/storemanager-profile/store-manager-profile.service';
+import { IconsModule } from '../icons/icons.module';
 
 
 @NgModule({
@@ -24,12 +26,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IconsModule
   ],
   providers: [
     ClientProfileService,
     StoreService,
-    ProfileService
+    ProfileService, 
+    StoreManagerProfileService
   ]
 })
 export class ProfileModule { }

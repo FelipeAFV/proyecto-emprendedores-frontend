@@ -21,7 +21,7 @@ const routes: Routes = [
       }
 ]},
   { path: 'edit', component: ProfileEditComponent },
-  { path: 'addStoreManager', component: ProfileAddComponent, data: {isStoreManagerRequest: true, profileToCreate: 'emprendedor'}}
+  { path: 'addStoreManager', component: ProfileAddComponent, data: {isStoreManagerRequest: true}}
 
 ];
 

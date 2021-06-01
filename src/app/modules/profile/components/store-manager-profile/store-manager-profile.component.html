@@ -1,1 +1,11 @@
-<p>store-manager-profile works!</p>
+<h2>Mis emprendimientos</h2>
+
+<div class="container">
+        <div class="store-container">
+            <a href="/stores/create">Crear Tienda</a>
+        </div>
+        <div (click)="goToStore(store)" class="store-container" *ngFor="let store of managerStores">
+                <h4>{{store.name}}</h4>
+                <p>{{store.description}}</p>
+        </div>
+</div>
