@@ -6,10 +6,9 @@
           <input formControlName="name" type="text" class="form-control" id="name" >
         </div>
         <div class="mb-3">
-          <label for="category" class="form-label">Contraseña</label>
+          <label for="category" class="form-label">Categoria</label>
           <select formControlName="category" id="category" class="form-control">
-              <option value="">Tecnología</option>
-              <option value="">Salud</option>
+            <option [selected]="category == defaultCategory" *ngFor="let category of storeCategories" value="{{category}}">{{getPresentableNameFromCategory(category)}}</option>
           </select>
         </div>
         <div class="mb-3">

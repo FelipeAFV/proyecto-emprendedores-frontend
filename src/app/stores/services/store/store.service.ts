@@ -16,6 +16,11 @@ export class StoreService {
   
   isStoreManager(storeName: string) {
     return this.http.post(`${environment.ApiUrl}/authorization/isStoreOwner`, {storeName: storeName}, {withCredentials: true});
+    
+  }
+  
+  createStore(store: Store) {
+    return this.http.post(`${environment.ApiUrl}/stores`, store, {withCredentials: true});
 
   }
 }
